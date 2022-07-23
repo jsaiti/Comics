@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991C15A1288C47C6005DC37A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C15A0288C47C6005DC37A /* APIManager.swift */; };
+		991C15A3288C487A005DC37A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C15A2288C487A005DC37A /* ErrorResponse.swift */; };
+		991C15A5288C4909005DC37A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C15A4288C4909005DC37A /* Router.swift */; };
+		991C15A7288C4997005DC37A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C15A6288C4997005DC37A /* HTTPMethod.swift */; };
+		991C15A9288C4B99005DC37A /* URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C15A8288C4B99005DC37A /* URLRequestConvertible.swift */; };
+		991C15AB288C4C94005DC37A /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C15AA288C4C94005DC37A /* BaseRouter.swift */; };
 		991F41F9288C1A6F00B30B35 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 991F41F8288C1A6F00B30B35 /* ProgressHUD */; };
 		991F41FB288C1CF600B30B35 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991F41FA288C1CF600B30B35 /* Colors.xcassets */; };
 		991F41FE288C1D3200B30B35 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F41FD288C1D3200B30B35 /* UIColorExtension.swift */; };
@@ -47,6 +53,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		991C15A0288C47C6005DC37A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		991C15A2288C487A005DC37A /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		991C15A4288C4909005DC37A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		991C15A6288C4997005DC37A /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		991C15A8288C4B99005DC37A /* URLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestConvertible.swift; sourceTree = "<group>"; };
+		991C15AA288C4C94005DC37A /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		991F41FA288C1CF600B30B35 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		991F41FD288C1D3200B30B35 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		991F41FF288C20E500B30B35 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -173,6 +185,12 @@
 		99BD806A288C11DF00B18C8F /* API */ = {
 			isa = PBXGroup;
 			children = (
+				991C15A0288C47C6005DC37A /* APIManager.swift */,
+				991C15AA288C4C94005DC37A /* BaseRouter.swift */,
+				991C15A2288C487A005DC37A /* ErrorResponse.swift */,
+				991C15A6288C4997005DC37A /* HTTPMethod.swift */,
+				991C15A4288C4909005DC37A /* Router.swift */,
+				991C15A8288C4B99005DC37A /* URLRequestConvertible.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -394,17 +412,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				99BD8038288C11A700B18C8F /* AppDelegate.swift in Sources */,
+				991C15AB288C4C94005DC37A /* BaseRouter.swift in Sources */,
 				991F41FE288C1D3200B30B35 /* UIColorExtension.swift in Sources */,
 				991F4204288C247F00B30B35 /* UIApplicationExtension.swift in Sources */,
+				991C15A1288C47C6005DC37A /* APIManager.swift in Sources */,
 				99BD8077288C135200B18C8F /* ViewModelViewController.swift in Sources */,
 				991F4200288C20E500B30B35 /* HomeViewModel.swift in Sources */,
 				99BD8075288C134100B18C8F /* BaseViewController.swift in Sources */,
+				991C15A5288C4909005DC37A /* Router.swift in Sources */,
 				99BD803A288C11A700B18C8F /* SceneDelegate.swift in Sources */,
 				99BD8068288C11D200B18C8F /* HomeViewController.swift in Sources */,
 				991F4206288C24AE00B30B35 /* UIViewControllerExtension.swift in Sources */,
 				99BD8079288C138000B18C8F /* BaseViewModel.swift in Sources */,
+				991C15A7288C4997005DC37A /* HTTPMethod.swift in Sources */,
+				991C15A9288C4B99005DC37A /* URLRequestConvertible.swift in Sources */,
 				991F420A288C271900B30B35 /* StringExtension.swift in Sources */,
 				991F4208288C26F200B30B35 /* Helper.swift in Sources */,
+				991C15A3288C487A005DC37A /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
