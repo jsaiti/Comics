@@ -10,11 +10,14 @@ import Foundation
 enum ComicsRouter: Router {
     
     case getSingleComic(comicNumber: Int)
+    case getLastComic
     
     var path: String {
         switch self {
         case .getSingleComic(let comicNumber):
             return "\(comicNumber)/info.0.json"
+        case .getLastComic:
+            return "info.0.json"
         }
     }
     
@@ -24,7 +27,7 @@ enum ComicsRouter: Router {
     
     var method: HTTPMethod {
         switch self {
-        case .getSingleComic:
+        case .getSingleComic, .getLastComic:
             return .get
         }
     }

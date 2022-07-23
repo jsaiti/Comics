@@ -15,4 +15,9 @@ extension APIManager {
         let router = ComicsRouter.getSingleComic(comicNumber: comicNumber)
         request(router, onSuccess: onSuccess, onError: onError)
     }
+    
+    func getLastComic(onSuccess: @escaping GetSingleComic, onError: @escaping ErrorHandler) {
+        let router = ComicsRouter.getLastComic
+        request(router, onSuccess: onSuccess, onError: onError)
+    }
 }
