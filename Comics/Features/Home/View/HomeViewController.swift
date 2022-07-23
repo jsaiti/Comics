@@ -11,9 +11,19 @@ class HomeViewController: ViewModelViewController<HomeViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addListeners()
+        viewModel.getSingleComic(comicNumber: 600)
     }
     
+    private func addListeners() {
+        viewModel.startLoading = { [weak self] in
+            self?.showProgress()
+        }
+        
+        viewModel.startLoading = { [weak self] in
+            self?.dismissProgress()
+        }
+    }
     /*
     // MARK: - Navigation
 

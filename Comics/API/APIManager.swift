@@ -11,28 +11,39 @@ typealias ErrorHandler = (ErrorResponse?, Error?) -> Void
 typealias Parameters = [String: Any]
 
 class APIManager: NSObject {
-
+    
     static let shared = APIManager()
+    private var queue: DispatchQueue!
+    
+    private override init() {
+        queue = DispatchQueue.main
+    }
     
     func request<T: Decodable>(_ router: Router, onSuccess:  @escaping (T) -> Void, onError: @escaping ErrorHandler) {
         do {
             let urlRequest = try router.asURLRequest()
-            nativeRequest(urlRequest) { data in
+            nativeRequest(urlRequest) { [self] data in
                 do {
                     let object = try JSONDecoder().decode(T.self, from: data)
-                    DispatchQueue.main.async {
+                    queue.async {
                         onSuccess(object)
                     }
                 } catch {
                     print("Failed to serialize JSON: ", error)
+                    queue.async {
+                        onError(nil, error)
+                    }
+                }
+            } onError: { [self] error in
+                queue.async {
                     onError(nil, error)
                 }
-            } onError: { error in
-                onError(nil, error)
             }
         } catch {
             print("Failed to serialize request: ", error)
-            onError(nil, error)
+            queue.async {
+                onError(nil, error)
+            }
         }
     }
     

@@ -9,7 +9,7 @@ import Foundation
 
 class BaseRouterManager {
     
-    static let baseURL = ""
+    static let baseURL = "http://xkcd.com/"
     
     // MARK: - RouterManager
     static func buildRequest(_ router: Router) throws -> URLRequest {
