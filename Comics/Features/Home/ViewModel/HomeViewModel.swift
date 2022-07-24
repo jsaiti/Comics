@@ -16,8 +16,8 @@ class HomeViewModel: BaseViewModel {
     var items = [Comic]()
     var totalComics: Int = 0
     
-    private let limit: Int = 25
-    private var offset: Int = 1
+    private let limit: Int = 20
+    private var offset: Int = 0
     
     func loadData() {
         resetData()
@@ -37,22 +37,30 @@ class HomeViewModel: BaseViewModel {
             if lastIndex > totalComics {
                 lastIndex = totalComics
             }
-            for index in startIndex...lastIndex {
-                getSingleComic(comicNumber: index) { [weak self] comic in
-                    guard let strongSelf = self else {
-                        return
-                    }
-                    strongSelf.offset += 1
-                    strongSelf.items.append(comic)
-                    if strongSelf.offset == lastIndex {
-                        strongSelf.didLoadItems?(strongSelf.items)
-                        strongSelf.stopLoading?()
-                    }
-                } onError: { [weak self] _, _ in
-                    self?.offset += 1
-                }
-            }
+            getComic(index: startIndex, limit: lastIndex)
         } else {
+            stopLoading?()
+        }
+    }
+    
+    private func getComic(index: Int, limit: Int) {
+        getSingleComic(comicNumber: index + 1) { [weak self] comic in
+            guard let strongSelf = self else { return }
+            strongSelf.offset += 1
+            strongSelf.items.append(comic)
+            strongSelf.checkTheEnd(index: index, limit: limit)
+        } onError: { [weak self] _, _ in
+            guard let strongSelf = self else { return }
+            strongSelf.offset += 1
+            strongSelf.checkTheEnd(index: index, limit: limit)
+        }
+    }
+    
+    private func checkTheEnd(index: Int, limit: Int) {
+        if index < limit - 1 {
+            getComic(index: index + 1, limit: limit)
+        } else {
+            didLoadItems?(items)
             stopLoading?()
         }
     }
@@ -67,7 +75,18 @@ class HomeViewModel: BaseViewModel {
     
     private func resetData() {
         items.removeAll()
-        offset = 1
+        offset = 0
         totalComics = 0
+    }
+}
+
+// TableView Data
+extension HomeViewModel {
+    var numberOfRows: Int {
+        return items.count
+    }
+    
+    func getItemForIndex(index: Int) -> Comic? {
+        items[safe: index]
     }
 }
