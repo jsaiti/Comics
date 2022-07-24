@@ -18,6 +18,7 @@ class HomeViewModel: BaseViewModel {
     
     private let limit: Int = 20
     private var offset: Int = 0
+    private var isLoading: Bool = false
     
     func loadData() {
         resetData()
@@ -32,12 +33,15 @@ class HomeViewModel: BaseViewModel {
     
     func getComics() {
         if offset < totalComics {
-            let startIndex = offset
-            var lastIndex = offset + limit
-            if lastIndex > totalComics {
-                lastIndex = totalComics
+            if !isLoading {
+                isLoading = true
+                let startIndex = offset
+                var lastIndex = offset + limit
+                if lastIndex > totalComics {
+                    lastIndex = totalComics
+                }
+                getComic(index: startIndex, limit: lastIndex)
             }
-            getComic(index: startIndex, limit: lastIndex)
         } else {
             stopLoading?()
         }
@@ -62,6 +66,7 @@ class HomeViewModel: BaseViewModel {
         } else {
             didLoadItems?(items)
             stopLoading?()
+            isLoading = false
         }
     }
     
