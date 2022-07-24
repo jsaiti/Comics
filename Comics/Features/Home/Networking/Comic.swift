@@ -7,13 +7,15 @@
 
 import Foundation
 
-struct Comic: Decodable {
-    let month: String
-    let num: Int
-    let link, year, news, safeTitle: String
-    let transcript, alt: String
-    let img: String
-    let title, day: String
+class Comic: SQLTable, Decodable {
+    var id = -1
+    var month: String
+    var num: Int
+    var link, year, news, safeTitle: String
+    var transcript, alt: String
+    var img: String
+    var title, day: String
+    var isSaved = false
 
     enum CodingKeys: String, CodingKey {
         case month, num, link, year, news

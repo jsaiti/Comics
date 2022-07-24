@@ -31,7 +31,13 @@
                             <constraint firstItem="hzk-Sx-5vS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kE3-iD-oRR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="F6F-M4-in4"/>
+                    <navigationItem key="navigationItem" id="F6F-M4-in4">
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="T5e-8m-ade">
+                            <connections>
+                                <action selector="actionFavorites:" destination="BYZ-38-t0r" id="fVb-bf-Ucf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="hzk-Sx-5vS" id="67s-rn-RGq"/>
                         <segue destination="SVp-4C-U0O" kind="show" identifier="showComicDetailsSegue" id="0hY-aL-msq"/>

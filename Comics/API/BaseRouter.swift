@@ -32,7 +32,7 @@ class BaseRouterManager {
             let data = try JSONSerialization.data(withJSONObject: params, options: [])
             return data
         } catch {
-            print(error)
+            Debug.log(error)
         }
         return nil
     }

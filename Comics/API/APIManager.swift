@@ -29,7 +29,7 @@ class APIManager: NSObject {
                         onSuccess(object)
                     }
                 } catch {
-                    print("Failed to serialize JSON: ", error)
+                    Debug.log("Failed to serialize JSON: \(error)")
                     queue.async {
                         onError(nil, error)
                     }
@@ -40,7 +40,7 @@ class APIManager: NSObject {
                 }
             }
         } catch {
-            print("Failed to serialize request: ", error)
+            Debug.log("Failed to serialize request: \(error)")
             queue.async {
                 onError(nil, error)
             }
@@ -56,7 +56,7 @@ class APIManager: NSObject {
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
-                print(error.localizedDescription)
+                Debug.log(error.localizedDescription)
                 onError(error)
                 return
             }

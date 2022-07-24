@@ -11,18 +11,35 @@ class HomeViewModel: BaseViewModel {
     
     var startLoading: (() -> Void)?
     var stopLoading: (() -> Void)?
-    var didLoadItems: ((_ items: [Comic]) -> Void)?
+    var didLoadItems: (() -> Void)?
     
     var items = [Comic]()
+    var savedItems = [Comic]()
     var totalComics: Int = 0
+    
+    var useSavedComics: Bool = false {
+        didSet {
+            didLoadItems?()
+        }
+    }
     
     private let limit: Int = 20
     private var offset: Int = 0
     private var isLoading: Bool = false
     
+    required init() {
+        super.init()
+        self.addObservers()
+    }
+    
+    deinit {
+        removeObservers()
+    }
+    
     func loadData() {
         resetData()
         startLoading?()
+        getSavedComics()
         getLastComic { [weak self] comic in
             self?.totalComics = comic.num
             self?.getComics()
@@ -32,15 +49,19 @@ class HomeViewModel: BaseViewModel {
     }
     
     func getComics() {
-        if offset < totalComics {
-            if !isLoading {
-                isLoading = true
-                let startIndex = offset
-                var lastIndex = offset + limit
-                if lastIndex > totalComics {
-                    lastIndex = totalComics
+        if !useSavedComics {
+            if offset < totalComics {
+                if !isLoading {
+                    isLoading = true
+                    let startIndex = offset
+                    var lastIndex = offset + limit
+                    if lastIndex > totalComics {
+                        lastIndex = totalComics
+                    }
+                    getComic(index: startIndex, limit: lastIndex)
                 }
-                getComic(index: startIndex, limit: lastIndex)
+            } else {
+                stopLoading?()
             }
         } else {
             stopLoading?()
@@ -64,9 +85,10 @@ class HomeViewModel: BaseViewModel {
         if index < limit - 1 {
             getComic(index: index + 1, limit: limit)
         } else {
-            didLoadItems?(items)
+            didLoadItems?()
             stopLoading?()
             isLoading = false
+            handleSavedComics()
         }
     }
     
@@ -83,15 +105,53 @@ class HomeViewModel: BaseViewModel {
         offset = 0
         totalComics = 0
     }
+    
+    private func getSavedComics() {
+        savedItems = Comic.rows()
+    }
+    
+    private func handleSavedComics() {
+        getSavedComics()
+        if !savedItems.isEmpty {
+            items.forEach { comic in
+                if let _ = savedItems.first(where: {$0.num == comic.num}) {
+                    comic.isSaved = true
+                }
+            }
+        }
+    }
 }
 
 // TableView Data
 extension HomeViewModel {
     var numberOfRows: Int {
+        if useSavedComics {
+            return savedItems.count
+        }
         return items.count
     }
     
     func getItemForIndex(index: Int) -> Comic? {
-        items[safe: index]
+        if useSavedComics {
+            return savedItems[safe: index]
+        }
+       return items[safe: index]
+    }
+}
+
+extension HomeViewModel {
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(favoriteListChanged), name: .favoriteListChanged, object: nil)
+    }
+    
+    private func removeObservers() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func favoriteListChanged() {
+        getSavedComics()
+        if useSavedComics {
+            didLoadItems?()
+        }
     }
 }

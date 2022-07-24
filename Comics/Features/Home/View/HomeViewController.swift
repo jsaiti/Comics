@@ -29,10 +29,11 @@ class HomeViewController: ViewModelViewController<HomeViewModel> {
         }
         
         viewModel.stopLoading = { [weak self] in
+            self?.tableView.isLoading = false
             self?.dismissProgress()
         }
         
-        viewModel.didLoadItems = { [weak self] items in
+        viewModel.didLoadItems = { [weak self] in
             self?.tableView.isLoading = false
             self?.tableView.reloadData()
         }
@@ -46,6 +47,10 @@ class HomeViewController: ViewModelViewController<HomeViewModel> {
         tableView.tableFooterView = UIView(frame: .zero)
     }
     
+    @IBAction private func actionFavorites(_ sender: UIBarButtonItem) {
+        sender.title = viewModel.useSavedComics ? "Favorites" : "Comics"
+        viewModel.useSavedComics.toggle()
+    }
     
     // MARK: - Navigation
 

@@ -11,9 +11,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private let database = SQLiteDB.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        openDatabase()
         return true
     }
 
@@ -30,7 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+}
 
-
+extension AppDelegate {
+    private func openDatabase() {
+        let dbName = "data.db"
+        let bundle = Bundle(for: AppDelegate.self)
+        if let url = bundle.resourceURL {
+            let path = url.appendingPathComponent(dbName).path
+            _ = self.database.open(dbPath: path, copyFile:true)
+            Debug.log("DB found")
+        }
+    }
 }
 

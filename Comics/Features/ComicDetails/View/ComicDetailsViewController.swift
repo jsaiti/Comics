@@ -34,8 +34,11 @@ class ComicDetailsViewController: ViewModelViewController<ComicDetailsViewModel>
         titleLabel.text = viewModel.title
         dateLabel.text = viewModel.date
         descriptionLabel.text = viewModel.description
-        
-        imageView.downloadImage(urlString: viewModel.imageURL, showIndicator: true)
+        imageView.downloadImage(urlString: viewModel.imageURL, showIndicator: false)
+        favoriteButton.setImage(viewModel.favoriteImage, for: .normal)
+        viewModel.didChangeFavoriteState = { [weak self] image in
+            self?.favoriteButton.setImage(image, for: .normal)
+        }
     }
     
     @IBAction func shareAction(_ sender: UIButton) {
@@ -64,7 +67,7 @@ class ComicDetailsViewController: ViewModelViewController<ComicDetailsViewModel>
     }
     
     @IBAction func favoriteAction(_ sender: Any) {
-        showAlert(title: "Coming Soon!", message: nil)
+        viewModel.handleFavorite()
     }
     
     @IBAction func explainAction(_ sender: UIButton) {
