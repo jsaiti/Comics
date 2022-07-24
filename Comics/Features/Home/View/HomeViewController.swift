@@ -46,16 +46,15 @@ class HomeViewController: ViewModelViewController<HomeViewModel> {
         tableView.tableFooterView = UIView(frame: .zero)
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let comicDetailsVC = segue.destination as? ComicDetailsViewController, let comic = sender as? Comic {
+            comicDetailsVC.comic = comic
+        }
     }
-    */
-
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -77,6 +76,9 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if let item = viewModel.getItemForIndex(index: indexPath.row) {
+            performSegue(withIdentifier: "showComicDetailsSegue", sender: item)
+        }
     }
 }
 
