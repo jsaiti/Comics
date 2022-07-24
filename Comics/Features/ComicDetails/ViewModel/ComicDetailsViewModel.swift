@@ -35,4 +35,8 @@ class ComicDetailsViewModel: BaseViewModel {
     var explanation: String {
         comic.alt
     }
+    
+    var shareInformation: String {
+        title + "\n" + description
+    }
 }

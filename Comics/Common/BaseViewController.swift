@@ -36,7 +36,7 @@ class BaseViewController: UIViewController {
         ProgressHUD.showError(message)
     }
     
-    func showAlert(title: String, message: String, buttons: [String] = [], completion: ((_ id: Int?) -> Void)? = nil) {
+    func showAlert(title: String, message: String? = nil, buttons: [String] = [], completion: ((_ id: Int?) -> Void)? = nil) {
         Helper.showAlert(in: self, title: title, message: message, buttons: buttons, completion: completion)
     }
 }
