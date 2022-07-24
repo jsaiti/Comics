@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  ComicsViewModel.swift
 //  Comics
 //
 //  Created by Jusuf Saiti on 23.7.22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HomeViewModel: BaseViewModel {
+class ComicsViewModel: BaseViewModel {
     
     var startLoading: (() -> Void)?
     var stopLoading: (() -> Void)?
@@ -123,7 +123,7 @@ class HomeViewModel: BaseViewModel {
 }
 
 // TableView Data
-extension HomeViewModel {
+extension ComicsViewModel {
     var numberOfRows: Int {
         if useSavedComics {
             return savedItems.count
@@ -139,7 +139,7 @@ extension HomeViewModel {
     }
 }
 
-extension HomeViewModel {
+extension ComicsViewModel {
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(favoriteListChanged), name: .favoriteListChanged, object: nil)
     }

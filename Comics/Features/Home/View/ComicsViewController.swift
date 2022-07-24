@@ -1,13 +1,13 @@
 //
-//  HomeViewController.swift
+//  ComicsViewController.swift
 //  Comics
 //
 //  Created by Jusuf Saiti on 23.7.22.
 //
 
 import UIKit
-import ProgressHUD
-class HomeViewController: ViewModelViewController<HomeViewModel> {
+
+class ComicsViewController: ViewModelViewController<ComicsViewModel> {
     
     @IBOutlet private weak var tableView: PaginationTableView!
     
@@ -49,6 +49,7 @@ class HomeViewController: ViewModelViewController<HomeViewModel> {
     
     @IBAction private func actionFavorites(_ sender: UIBarButtonItem) {
         sender.title = viewModel.useSavedComics ? "Favorites" : "Comics"
+        title = viewModel.useSavedComics ? "Comics" : "Favorites"
         viewModel.useSavedComics.toggle()
     }
     
@@ -62,7 +63,7 @@ class HomeViewController: ViewModelViewController<HomeViewModel> {
     }
 }
 
-extension HomeViewController: UITableViewDataSource {
+extension ComicsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfRows
     }
@@ -78,7 +79,7 @@ extension HomeViewController: UITableViewDataSource {
     }
 }
 
-extension HomeViewController: UITableViewDelegate {
+extension ComicsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let item = viewModel.getItemForIndex(index: indexPath.row) {
@@ -87,7 +88,7 @@ extension HomeViewController: UITableViewDelegate {
     }
 }
 
-extension HomeViewController: PaginationTableViewDelegate {
+extension ComicsViewController: PaginationTableViewDelegate {
     func willPaginate(_ tableView: PaginationTableView, to page: Int) {
         tableView.isLoading = true
         viewModel.getComics()
