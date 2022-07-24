@@ -34,7 +34,7 @@ class ImageDownloader: NSObject {
         // In case there are more than one requestor for the image, we append their completion block.
         if loadingResponses[url] != nil {
             loadingResponses[url]?.append(completion)
-            return
+//            return
         } else {
             loadingResponses[url] = [completion]
         }

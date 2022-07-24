@@ -27,6 +27,10 @@ class ComicTableViewCellViewModel {
         comic.day + "." + comic.month + "." + comic.year
     }
     
+    var savedImage: UIImage? {
+        return UIImage.init(data: comic.imageData) ?? UIImage(named: "no-image")
+    }
+    
     init(comic: Comic) {
         self.comic = comic
     }

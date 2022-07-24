@@ -41,8 +41,12 @@ class ComicDetailsViewModel: BaseViewModel {
         title + "\n" + description
     }
     
-    var favoriteImage: UIImage? {
+    var favoriteIcon: UIImage? {
         comic.isSaved ? UIImage(named: "heart-filled") : UIImage(named: "heart")
+    }
+    
+    var savedImage: UIImage? {
+        return UIImage.init(data: comic.imageData) ?? UIImage(named: "no-image")
     }
     
     func handleFavorite() {
@@ -60,7 +64,13 @@ class ComicDetailsViewModel: BaseViewModel {
             let success = comic.save()
             Debug.log("Comic saved with success: \(success)")
         }
-        didChangeFavoriteState?(favoriteImage)
+        didChangeFavoriteState?(favoriteIcon)
         NotificationCenter.default.post(name: .favoriteListChanged, object: nil)
+    }
+    
+    func saveImage(image: UIImage) {
+        if let data = image.pngData() {
+            comic.imageData = data
+        }
     }
 }

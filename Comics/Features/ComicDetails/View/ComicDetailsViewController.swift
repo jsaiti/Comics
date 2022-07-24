@@ -34,8 +34,10 @@ class ComicDetailsViewController: ViewModelViewController<ComicDetailsViewModel>
         titleLabel.text = viewModel.title
         dateLabel.text = viewModel.date
         descriptionLabel.text = viewModel.description
-        imageView.downloadImage(urlString: viewModel.imageURL, showIndicator: false)
-        favoriteButton.setImage(viewModel.favoriteImage, for: .normal)
+        imageView.downloadImage(urlString: viewModel.imageURL, placeholder: viewModel.savedImage, showIndicator: false) { [weak self] image in
+            self?.viewModel.saveImage(image: image)
+        }
+        favoriteButton.setImage(viewModel.favoriteIcon, for: .normal)
         viewModel.didChangeFavoriteState = { [weak self] image in
             self?.favoriteButton.setImage(image, for: .normal)
         }

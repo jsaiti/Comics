@@ -29,8 +29,7 @@ class ComicTableViewCell: UITableViewCell, CellIdentifiable {
         labelComicNumber.text = viewModel.comicNumber
         labelTitle.text = viewModel.title
         labelDate.text = viewModel.date
-        let placeholder = UIImage(named: "no-image")
-        imgView.image = placeholder
-        imgView.downloadImage(urlString: viewModel.imageUrl, placeholder: placeholder, showIndicator: false)
+        imgView.image = UIImage(named: "no-image")
+        imgView.downloadImage(urlString: viewModel.imageUrl, placeholder: viewModel.savedImage, showIndicator: false)
     }
 }

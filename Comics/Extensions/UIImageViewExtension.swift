@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIImageView {
-    func downloadImage(urlString: String?, placeholder: UIImage? = nil, showIndicator: Bool) {
+    func downloadImage(urlString: String?, placeholder: UIImage? = nil, showIndicator: Bool, onCompletion: ((_ image: UIImage) -> Void)? = nil) {
         guard let url = URL(string: urlString?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else {
             self.image = placeholder
             return
@@ -27,6 +27,7 @@ extension UIImageView {
             indicator?.stopAnimating()
             if let image = image {
                 self?.image = image
+                onCompletion?(image)
             } else {
                 self?.image = placeholder
             }

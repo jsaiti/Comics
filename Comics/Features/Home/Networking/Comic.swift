@@ -16,6 +16,7 @@ class Comic: SQLTable, Decodable {
     var img: String
     var title, day: String
     var isSaved = false
+    var imageData = Data()
 
     enum CodingKeys: String, CodingKey {
         case month, num, link, year, news
