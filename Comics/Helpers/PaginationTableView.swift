@@ -7,6 +7,9 @@
 
 import UIKit
 
+// This code is borrowed from the link below with a few changes due to not wanting to set up CocoaPods on the project.
+// https://github.com/mu29/PagingTableView
+
 protocol PaginationTableViewDelegate: AnyObject {
     func willPaginate(_ tableView: PaginationTableView, to page: Int)
 }

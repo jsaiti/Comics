@@ -90,7 +90,7 @@ extension ComicsViewController: UITableViewDelegate {
 
 extension ComicsViewController: PaginationTableViewDelegate {
     func willPaginate(_ tableView: PaginationTableView, to page: Int) {
-        tableView.isLoading = true
-        viewModel.getComics()
+        let result = viewModel.getComics()
+        tableView.isLoading = result
     }
 }

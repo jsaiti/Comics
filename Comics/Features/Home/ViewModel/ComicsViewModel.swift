@@ -48,7 +48,8 @@ class ComicsViewModel: BaseViewModel {
         }
     }
     
-    func getComics() {
+    @discardableResult
+    func getComics() -> Bool {
         if !useSavedComics {
             if offset < totalComics {
                 if !isLoading {
@@ -59,6 +60,7 @@ class ComicsViewModel: BaseViewModel {
                         lastIndex = totalComics
                     }
                     getComic(index: startIndex, limit: lastIndex)
+                    return true
                 }
             } else {
                 stopLoading?()
@@ -66,6 +68,7 @@ class ComicsViewModel: BaseViewModel {
         } else {
             stopLoading?()
         }
+        return false
     }
     
     private func getComic(index: Int, limit: Int) {
