@@ -49,13 +49,14 @@
 		99BD803F288C11A700B18C8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99BD803D288C11A700B18C8F /* Main.storyboard */; };
 		99BD8041288C11AA00B18C8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99BD8040288C11AA00B18C8F /* Assets.xcassets */; };
 		99BD8044288C11AA00B18C8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99BD8042288C11AA00B18C8F /* LaunchScreen.storyboard */; };
-		99BD804F288C11AA00B18C8F /* ComicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD804E288C11AA00B18C8F /* ComicsTests.swift */; };
 		99BD8059288C11AA00B18C8F /* ComicsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD8058288C11AA00B18C8F /* ComicsUITests.swift */; };
 		99BD805B288C11AA00B18C8F /* ComicsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD805A288C11AA00B18C8F /* ComicsUITestsLaunchTests.swift */; };
 		99BD8068288C11D200B18C8F /* ComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD8067288C11D200B18C8F /* ComicsViewController.swift */; };
 		99BD8075288C134100B18C8F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD8074288C134100B18C8F /* BaseViewController.swift */; };
 		99BD8077288C135200B18C8F /* ViewModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD8076288C135200B18C8F /* ViewModelViewController.swift */; };
 		99BD8079288C138000B18C8F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD8078288C138000B18C8F /* BaseViewModel.swift */; };
+		99C3D13C288F3EB4002B8418 /* ComicTableViewCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C3D13B288F3EB4002B8418 /* ComicTableViewCellViewModelTest.swift */; };
+		99C3D13E288F4362002B8418 /* ComicDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C3D13D288F4362002B8418 /* ComicDetailsViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,7 +123,6 @@
 		99BD8043288C11AA00B18C8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99BD8045288C11AA00B18C8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99BD804A288C11AA00B18C8F /* ComicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99BD804E288C11AA00B18C8F /* ComicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsTests.swift; sourceTree = "<group>"; };
 		99BD8054288C11AA00B18C8F /* ComicsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComicsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99BD8058288C11AA00B18C8F /* ComicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsUITests.swift; sourceTree = "<group>"; };
 		99BD805A288C11AA00B18C8F /* ComicsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -130,6 +130,8 @@
 		99BD8074288C134100B18C8F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		99BD8076288C135200B18C8F /* ViewModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelViewController.swift; sourceTree = "<group>"; };
 		99BD8078288C138000B18C8F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		99C3D13B288F3EB4002B8418 /* ComicTableViewCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicTableViewCellViewModelTest.swift; sourceTree = "<group>"; };
+		99C3D13D288F4362002B8418 /* ComicDetailsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				995AED5E288E008A00503BAB /* ComicsViewModelTest.swift */,
+				99C3D13B288F3EB4002B8418 /* ComicTableViewCellViewModelTest.swift */,
+				99C3D13D288F4362002B8418 /* ComicDetailsViewModelTest.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -295,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				995AED5D288E002700503BAB /* Features */,
-				99BD804E288C11AA00B18C8F /* ComicsTests.swift */,
 			);
 			path = ComicsTests;
 			sourceTree = "<group>";
@@ -335,10 +338,10 @@
 		99BD806B288C11E900B18C8F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				991F4207288C26F200B30B35 /* Helper.swift */,
 				991C15B8288CA878005DC37A /* CellIdentifiable.swift */,
-				991C15C4288D5DC5005DC37A /* PaginationTableView.swift */,
 				9904D238288DD16E00D28572 /* Debug.swift */,
+				991F4207288C26F200B30B35 /* Helper.swift */,
+				991C15C4288D5DC5005DC37A /* PaginationTableView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -596,8 +599,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C3D13C288F3EB4002B8418 /* ComicTableViewCellViewModelTest.swift in Sources */,
+				99C3D13E288F4362002B8418 /* ComicDetailsViewModelTest.swift in Sources */,
 				995AED5F288E008A00503BAB /* ComicsViewModelTest.swift in Sources */,
-				99BD804F288C11AA00B18C8F /* ComicsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

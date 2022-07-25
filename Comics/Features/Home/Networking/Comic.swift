@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Comic: SQLTable, Decodable {
+class Comic: SQLTable, Codable {
     var id = -1
     var month: String
     var num: Int
