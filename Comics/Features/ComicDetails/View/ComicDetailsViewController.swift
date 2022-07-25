@@ -12,10 +12,10 @@ class ComicDetailsViewController: ViewModelViewController<ComicDetailsViewModel>
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var headerView: UIView!
     @IBOutlet private weak var favoriteButton: UIButton!
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var dateLabel: UILabel!
-    @IBOutlet private weak var descriptionLabel: UILabel!
-    @IBOutlet private weak var explainedLabel: UILabel!
+    @IBOutlet private weak var titleLabel: LabelLargeTitle!
+    @IBOutlet private weak var dateLabel: LabelH3!
+    @IBOutlet private weak var descriptionLabel: LabelBody!
+    @IBOutlet private weak var explainedLabel: LabelBody!
     @IBOutlet private weak var explainButton: UIButton!
     
     var comic: Comic! {

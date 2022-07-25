@@ -11,45 +11,45 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="KGk-i7-Jjw" customClass="ComicTableViewCell" customModule="Comics" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="318" height="79"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="ComicTableViewCell" customModule="Comics" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="318" height="82"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="318" height="79"/>
+                <rect key="frame" x="0.0" y="0.0" width="318" height="82"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jar-9E-Svz">
-                        <rect key="frame" x="8" y="4" width="302" height="71"/>
+                        <rect key="frame" x="8" y="4" width="302" height="54.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hIu-qQ-hfv">
-                                <rect key="frame" x="8" y="8" width="55" height="55"/>
+                                <rect key="frame" x="8" y="4" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hIu-qQ-hfv" secondAttribute="height" multiplier="1:1" id="2sO-d9-WGr"/>
-                                    <constraint firstAttribute="height" constant="55" id="d01-hD-Us0"/>
+                                    <constraint firstAttribute="height" constant="70" id="d01-hD-Us0"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p9T-GW-teO">
-                                <rect key="frame" x="79" y="8" width="215" height="55"/>
+                                <rect key="frame" x="94" y="8" width="200" height="38.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4DG-W0-Jym">
-                                        <rect key="frame" x="0.0" y="0.0" width="215" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz9-Js-lIy">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz9-Js-lIy" customClass="LabelTitle" customModule="Comics" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="43.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jm-dG-v1q">
-                                                <rect key="frame" x="43.5" y="0.0" width="171.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jm-dG-v1q" customClass="LabelH3" customModule="Comics" customModuleProvider="target">
+                                                <rect key="frame" x="43.5" y="0.0" width="156.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnG-3f-ZDu">
-                                        <rect key="frame" x="0.0" y="20.5" width="215" height="34.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnG-3f-ZDu" customClass="LabelBody" customModule="Comics" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="20.5" width="200" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -60,11 +60,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="p9T-GW-teO" firstAttribute="top" secondItem="Jar-9E-Svz" secondAttribute="top" constant="8" id="BDS-XQ-dI5"/>
-                            <constraint firstAttribute="bottom" secondItem="hIu-qQ-hfv" secondAttribute="bottom" constant="8" id="Uwf-TW-puQ"/>
+                            <constraint firstAttribute="bottom" secondItem="hIu-qQ-hfv" secondAttribute="bottom" constant="4" id="Uwf-TW-puQ"/>
                             <constraint firstItem="p9T-GW-teO" firstAttribute="leading" secondItem="hIu-qQ-hfv" secondAttribute="trailing" constant="16" id="hYu-IQ-hJ5"/>
                             <constraint firstAttribute="bottom" secondItem="p9T-GW-teO" secondAttribute="bottom" constant="8" id="noI-61-lHg"/>
                             <constraint firstItem="hIu-qQ-hfv" firstAttribute="leading" secondItem="Jar-9E-Svz" secondAttribute="leading" constant="8" id="oL9-dl-EGC"/>
-                            <constraint firstItem="hIu-qQ-hfv" firstAttribute="top" secondItem="Jar-9E-Svz" secondAttribute="top" constant="8" id="tVZ-0K-hau"/>
+                            <constraint firstItem="hIu-qQ-hfv" firstAttribute="top" secondItem="Jar-9E-Svz" secondAttribute="top" constant="4" id="tVZ-0K-hau"/>
                             <constraint firstAttribute="trailing" secondItem="p9T-GW-teO" secondAttribute="trailing" constant="8" id="zb8-5G-XgO"/>
                         </constraints>
                     </view>
@@ -84,7 +84,7 @@
                 <outlet property="labelDate" destination="1Jm-dG-v1q" id="6br-na-GIk"/>
                 <outlet property="labelTitle" destination="CnG-3f-ZDu" id="80Q-n2-xl6"/>
             </connections>
-            <point key="canvasLocation" x="130.43478260869566" y="123.88392857142857"/>
+            <point key="canvasLocation" x="130.43478260869566" y="122.87946428571428"/>
         </tableViewCell>
     </objects>
     <resources>

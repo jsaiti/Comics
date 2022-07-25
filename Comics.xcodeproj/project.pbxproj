@@ -57,6 +57,8 @@
 		99BD8079288C138000B18C8F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BD8078288C138000B18C8F /* BaseViewModel.swift */; };
 		99C3D13C288F3EB4002B8418 /* ComicTableViewCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C3D13B288F3EB4002B8418 /* ComicTableViewCellViewModelTest.swift */; };
 		99C3D13E288F4362002B8418 /* ComicDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C3D13D288F4362002B8418 /* ComicDetailsViewModelTest.swift */; };
+		99C3D142288F4E4B002B8418 /* UILabelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C3D141288F4E4B002B8418 /* UILabelUtils.swift */; };
+		99C3D144288F4F2D002B8418 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C3D143288F4F2D002B8418 /* UIFontExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		99BD8078288C138000B18C8F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		99C3D13B288F3EB4002B8418 /* ComicTableViewCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicTableViewCellViewModelTest.swift; sourceTree = "<group>"; };
 		99C3D13D288F4362002B8418 /* ComicDetailsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewModelTest.swift; sourceTree = "<group>"; };
+		99C3D141288F4E4B002B8418 /* UILabelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelUtils.swift; sourceTree = "<group>"; };
+		99C3D143288F4F2D002B8418 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +223,7 @@
 				991C15BE288CB6CF005DC37A /* UIViewExtension.swift */,
 				991C15C2288CBB46005DC37A /* UIImageViewExtension.swift */,
 				9904D23C288DEDED00D28572 /* NotificationExtension.swift */,
+				99C3D143288F4F2D002B8418 /* UIFontExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,15 +287,16 @@
 		99BD8036288C11A700B18C8F /* Comics */ = {
 			isa = PBXGroup;
 			children = (
-				9904D223288DCE1D00D28572 /* Frameworks */,
 				99BD806A288C11DF00B18C8F /* API */,
 				99BD8071288C128600B18C8F /* Common */,
 				99BD8073288C12B100B18C8F /* Delegates */,
 				991F41FC288C1D1C00B30B35 /* Extensions */,
 				99BD8069288C11D800B18C8F /* Features */,
+				9904D223288DCE1D00D28572 /* Frameworks */,
 				99BD806B288C11E900B18C8F /* Helpers */,
 				99BD8072288C129600B18C8F /* Storyboards */,
 				99BD806D288C121900B18C8F /* SupportFiles */,
+				99C3D13F288F4E23002B8418 /* Views */,
 			);
 			path = Comics;
 			sourceTree = "<group>";
@@ -412,6 +418,22 @@
 				99BD8039288C11A700B18C8F /* SceneDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		99C3D13F288F4E23002B8418 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99C3D140288F4E31002B8418 /* Labels */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		99C3D140288F4E31002B8418 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				99C3D141288F4E4B002B8418 /* UILabelUtils.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -580,6 +602,7 @@
 				9904D22B288DCE6B00D28572 /* SQLiteBase.swift in Sources */,
 				991C15C1288CB8FB005DC37A /* ImageDownloader.swift in Sources */,
 				99BD8079288C138000B18C8F /* BaseViewModel.swift in Sources */,
+				99C3D144288F4F2D002B8418 /* UIFontExtension.swift in Sources */,
 				991C15A7288C4997005DC37A /* HTTPMethod.swift in Sources */,
 				991C15A9288C4B99005DC37A /* URLRequestConvertible.swift in Sources */,
 				991C15BB288CA923005DC37A /* ComicTableViewCellViewModel.swift in Sources */,
@@ -591,6 +614,7 @@
 				991C15B0288C89A2005DC37A /* Comic.swift in Sources */,
 				991F4208288C26F200B30B35 /* Helper.swift in Sources */,
 				991C15A3288C487A005DC37A /* ErrorResponse.swift in Sources */,
+				99C3D142288F4E4B002B8418 /* UILabelUtils.swift in Sources */,
 				9904D22A288DCE6B00D28572 /* CloudDB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

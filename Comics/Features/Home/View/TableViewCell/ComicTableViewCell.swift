@@ -11,9 +11,9 @@ class ComicTableViewCell: UITableViewCell, CellIdentifiable {
 
     @IBOutlet private weak var bgView: UIView!
     @IBOutlet private weak var imgView: UIImageView!
-    @IBOutlet private weak var labelComicNumber: UILabel!
-    @IBOutlet private weak var labelTitle: UILabel!
-    @IBOutlet private weak var labelDate: UILabel!
+    @IBOutlet private weak var labelComicNumber: LabelTitle!
+    @IBOutlet private weak var labelTitle: LabelBody!
+    @IBOutlet private weak var labelDate: LabelH3!
     
     override func awakeFromNib() {
         super.awakeFromNib()
