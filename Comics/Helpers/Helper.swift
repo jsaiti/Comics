@@ -8,12 +8,12 @@
 import UIKit
 
 class Helper {
-    static func showAlert(in viewController: UIViewController? = nil, title: String, message: String, buttons: [String] = [], completion: ((_ id: Int?) -> Void)? = nil) {
+    static func showAlert(in viewController: UIViewController? = nil, title: String, message: String? = nil, buttons: [String] = [], completion: ((_ id: Int?) -> Void)? = nil) {
         var localizedButtons: [String] = []
         for button in buttons {
             localizedButtons.append(button.localized)
         }
-        let alert = UIAlertController(title: title.localized, message: message.localized, preferredStyle: .alert)
+        let alert = UIAlertController(title: title.localized, message: message?.localized, preferredStyle: .alert)
         if buttons.isEmpty {
             let cancelAction = UIAlertAction(title: "OK".localized, style: .cancel) { action in
                 completion?(localizedButtons.firstIndex(of: action.title ?? ""))
