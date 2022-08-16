@@ -51,9 +51,13 @@ class ImageDownloader: NSObject {
             // Cache the image.
             self.cachedImages.setObject(image, forKey: url, cost: responseData.count)
             // Iterate over each requestor for the image and pass it back.
-            for block in blocks {
+            for (index, block) in blocks.enumerated() {
                 DispatchQueue.main.async {
                     block(image)
+                }
+                // Remove all closures after the job is done
+                if index == blocks.count - 1 {
+                    self.loadingResponses.removeValue(forKey: url)
                 }
             }
         }
